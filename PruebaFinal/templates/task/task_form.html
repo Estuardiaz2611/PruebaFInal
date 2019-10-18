@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<form method="post" class="form-group card" style="margin-left:30rem;margin-top:0; top:5rem;">
+    {% csrf_token %}
+    <h1 style="text-align:center;color:#1b9696; padding: 0.5rem">Task</h1>
+    {{ form.as_p }}
+    <button style="margin-top: 1rem;" class="btn btn-outline-info" type="submit">Guardar</button>
+</form>
+{% endblock %}

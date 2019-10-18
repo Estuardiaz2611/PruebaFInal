@@ -1,0 +1,34 @@
+{% extends 'base/base2.html' %}
+
+{% block card %}
+{% for task in object_list  %}
+<div class="container__Card-center" id="cuerpo">
+    <div class=" card" id="blanco">
+        <div class="card__head" id="up">
+            <div class="card__head__one" id="up">
+                <label class="card__h1">{{task.titulo_task}}</label><br>
+                <p class="card__p">Entrega: {{task.fecha_entrega}}</p>
+                <i class="fa icon-snapchat-ghost card__icon__one"></i>
+            </div>
+        </div>
+        <div class="card__icon" id="up">
+            <div class="cont__icon-card-one">
+                <i class="fa fa-plane icon-paper-plane-empty i-nav-left__card"></i>
+            </div>
+            <div class="cont__icon-card-one">
+                <i class="fa fa-users icon-users i-nav-left__card"></i>
+            </div>
+            <div class="cont__icon-card-one">
+                <i class="fa fa-docs icon-docs i-nav-left__card"></i>
+            </div>
+            <div class="cont__icon-card-one">
+                <i class="fa fa-docs icon-docs i-nav-left__card"></i>
+            </div>
+        </div>
+        <div class="card__cont" id="blanco">
+            <p class="card__medio">{{task.descripcion}}</p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

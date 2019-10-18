@@ -1,0 +1,58 @@
+{% extends 'base/base.html' %}
+
+{% block header %}
+<!--++++++++++++++++++++Navbar+++++++++++++++++++++++++++++++-->
+<div class="cont-up" id="rojo">
+    <div class="main-navbar">
+        <i class="fa fa-plane icon-paper-plane-empty i-nav"></i>
+        <div class="main-navbar__head-one" id="up">
+            <div class="div">
+                <a class="btn" style="background-color:#1b9696; color: white;"
+                    href="{% url 'login' %}">Login</a>
+            </div>
+        </div>
+        <div class="main-navbar__head-two" id="up">
+            <div class="main-navbar__head-one__one">
+                <i class="fa fa-bell icon-bell-alt head-two__i-one__one"></i>
+            </div>
+            <div>
+                <i class="fa fa-user icon-user-circle head-two__i"></i>
+            </div>
+            <div class="main-navbar__head-one__two">
+                <i class="fa fa-cog icon-cog head-two__i-one__three"></i>
+                <i class="fa fa-down-dir icon-sort-down head-two__i-one__two"></i>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<form method="post" class="form-group card" style="margin-left:30rem;margin-top:0; top:5rem;">
+    <h1 style="text-align:center;color:#1b9696; padding: 0.5rem">Iniciar Sesion</h1>
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="username">Nombre de Usuario: admin</label>
+                <input class="form-control" type="text" name="username">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="username">Password: admin</label>
+                <input class="form-control" type="password" name="password">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <input class="form-control" type="submit" value="ingresar">
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

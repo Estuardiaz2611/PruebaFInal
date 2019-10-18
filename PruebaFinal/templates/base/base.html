@@ -1,0 +1,82 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href=" {% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'font/fontello-dbf9097f/css/fontello.css' %}">
+    <link rel="stylesheet" href="{% static 'font/fontello-d027f459/css/fontello.css' %}">
+    <link rel="stylesheet" href="{% static 'font/fontello-31d05a21/css/fontello.css' %}">
+    {% block title %}<title>Document</title>{% endblock %}
+</head>
+
+<body>
+    {% block header %}
+    <!--++++++++++++++++++++Navbar+++++++++++++++++++++++++++++++-->
+    <div class="cont-up" id="rojo">
+        <div class="main-navbar">
+            <i class="fa fa-plane icon-paper-plane-empty i-nav"></i>
+            <div class="main-navbar__head-one" id="up">
+                <div class="div">
+                        <a class="btn" style="background-color:#1b9696; color: white;" href="{% url 'encargado:encargado_principal' %}">Inicio</a>
+                        <a class="btn" style="background-color:#1b9696; color: white;" href="{% url 'encargado:encargado_list' %}">Encargado</a>
+                        <a class="btn" style="background-color:#1b9696; color: white;" href="{% url 'task:task_list' %}">Task</a>
+                        <a class="btn" style="background-color:#1b9696; color: white;" href="{% url 'task:task_list_tar' %}">Tarjetas Task</a>
+                </div>
+            </div>
+            <div class="main-navbar__head-two" id="up">
+                <div class="main-navbar__head-one__one">
+                    <i class="fa fa-bell icon-bell-alt head-two__i-one__one"></i>
+                </div>
+                <div>
+                    <i class="fa fa-user icon-user-circle head-two__i"></i>
+                </div>
+                <div class="main-navbar__head-one__two">
+                    <i class="fa fa-cog icon-cog head-two__i-one__three"></i>
+                    <i class="fa fa-down-dir icon-sort-down head-two__i-one__two"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+       {% block left %}
+    <div class="cont-left" id="rojo">
+        <div class="cont-left__one">
+            <i class="fa fa-home icon-home i-nav-left"></i>
+        </div>
+        <div class="cont-left__one">
+            <i class="fa fa-book icon-book-1 i-nav-left__one"></i>
+        </div>
+        <div class="cont-left__one">
+            <i class="fa fa-calendar icon-calendar-empty i-nav-left__one"></i>
+        </div>
+        <div class="cont-left__one">
+            <i class="fa fa-docs icon-docs i-nav-left__one"></i>
+        </div>
+        <div class="cont-left__one">
+            <i class="fa fa-users icon-users i-nav-left__one"></i>
+        </div>
+        <div class="cont-left__one">
+            <i class="fa fa-logout icon-login i-nav-left__one"></i>
+        </div>
+    </div>
+    {% endblock %}
+
+
+    {% block content %}
+    <img src="{% static 'images/edoo_logo.png' %}" style="margin-left: 25%;margin-top: 20%; width:40rem">
+    {% endblock %}
+
+    {% block footer %}
+
+    {% endblock %}
+
+
+</body>
+
+</html>

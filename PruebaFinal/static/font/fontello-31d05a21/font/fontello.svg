@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2019 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="snapchat-ghost" unicode="&#xf2ac;" d="M473 779q75 0 134-39t92-107q15-32 15-100 0-26-5-106 8-4 15-4 10 0 29 7t28 8q16 0 32-10t15-26q0-18-18-30t-38-18-39-16-18-26q0-9 7-24 21-46 57-84t81-57q16-6 45-12 15-4 15-20 0-39-122-57-4-6-6-22t-8-26-18-10q-11 0-35 3t-36 4q-20 0-34-3-18-3-35-13t-33-21-32-22-43-19-55-8q-29 0-54 8t-41 19-33 22-32 21-35 13q-14 3-35 3-13 0-36-4t-33-5q-14 0-19 11t-8 26-6 23q-123 18-123 57 0 16 16 20 29 6 45 12 43 18 80 57t58 84q6 15 6 24 0 15-17 26t-39 17-39 17-18 29q0 15 15 26t31 10q8 0 26-7t30-7q10 0 18 4-5 79-5 106 0 68 15 100 36 76 96 110t147 36z" horiz-adv-x="928.6" />
+</font>
+</defs>
+</svg>

@@ -1,0 +1,50 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<table class="table table-bordered">
+    <div class="form-group">
+        <h1 style="text-align:center; padding: 5rem 0 3rem 0; color: #1b9696;">Listado de Encargados</h1>
+        <thead>
+            <tr class="table-info h5">
+                <td style="text-align: center">#</td>
+                <td style="text-align: center">Nombre Encargado</td>
+                <td style="text-align: center">Apellido Encargado</td>
+                <td style="text-align: center">Genero</td>
+                <td style="text-align: center">Nombre Usuario</td>
+                <td style="text-align: center">Fecha Nacimiento</td>
+                <td style="text-align: center">Acciones</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% if object_list %}
+            {% for encargado in object_list %}
+            <tr>
+                <td style="text-align: center; font-size: 1rem;">{{ encargado.id }}</td>
+                <td style="text-align: center; font-size: 1rem;">{{ encargado.nombre_encargado }}</td>
+                <td style="text-align: center; font-size: 1rem;">{{ encargado.apellido_encargado }}</td>
+                <td style="text-align: center; font-size: 1rem;">{{ encargado.genero }}</td>
+                <td style="text-align: center; font-size: 1rem;">{{ encargado.nombre_usuario }}</td>
+                <td style="text-align: center; font-size: 1rem;">{{ encargado.fecha_nacimiento }}</td>
+                <td>
+                    <a class="btn btn-outline-primary" href="{% url 'encargado:encargado_edit' encargado.id %}">EDITAR</a>
+                    <a class="btn btn-outline-danger" href="{% url 'encargado:encargado_delete' encargado.id %}">ELIMINAR</a>
+                </td>
+            </tr>
+            {% endfor %}
+            <a class="btn btn-outline-info" style="margin: 1rem; margin-left: 4rem;" href="{% url 'encargado:encargado_create'%}">AGREGAR ENCARGADO</a>
+            {% else %}
+            <h1 style="text-align: center">NO HAY ENCARGADOS PARA MOSTRAR</h1>
+            <a class="btn btn-outline-info" style="margin: 1rem; margin-left: 4rem;" href="{% url 'encargado:encargado_create'%}">AGREGAR ENCARGADO</a>
+            {% endif %}
+        </tbody>
+    </div>
+</table>
+<ul style="margin-top:3rem;">
+    {% if page_obj.has_previous %}
+        <a class="btn btn-outline-success" style="margin-left: 1.5rem;" href="?page={{ page_obj.previous_page_number }}">Regresar</a>
+        {% endif %}
+    {% if page_obj.has_next %}
+        <a class="btn btn-outline-success" style="margin-left: 1.5rem;" href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+        {% endif %}
+</ul>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<table class="table table-bordered">
+    <div class="form-group">
+        <h1 style="text-align:center; padding: 5rem 0 2rem 0; color: #1b9696;">Listado de Task</h1>
+        <thead>
+            <tr class="table-info h5">
+                <td style="text-align: center">#</td>
+                <td style="text-align: center">Titulo Task</td>
+                <td style="text-align: center">Fecha Entrega</td>
+                <td style="text-align: center">Encargado</td>
+                <td style="text-align: center">Acciones</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% if object_list %}
+            {% for task in object_list %}
+            <tr>
+                <td style="text-align: center; font-size: 1rem;">{{ task.id }}</td>
+                <td style="text-align: center; font-size: 1rem;">{{ task.titulo_task }}</td>
+                <td style="text-align: center; font-size: 1rem;">{{ task.fecha_entrega }}</td>
+                <td style="text-align: center; font-size: 1rem;">{{ task.encargado }}</td>
+                <td>
+                    <a class="btn btn-outline-primary" href="{% url 'task:task_edit' task.id %}">EDITAR</a>
+                    <a class="btn btn-outline-danger" href="{% url 'task:task_delete' task.id %}">ELIMINAR</a>
+                </td>
+            </tr>
+            {% endfor %}
+            <a class="btn btn-outline-info" style="margin: 1rem; margin-left: 5rem;" href="{% url 'task:task_create'%}">AGREGAR TASK</a>
+            {% else %}
+            <h1 style="text-align: center">NO HAY TASK PARA MOSTRAR</h1>
+            <a class="btn btn-outline-info" style="margin: 1rem; margin-left: 5rem;" href="{% url 'task:task_create'%}">AGREGAR TASK</a>
+            {% endif %}
+        </tbody>
+    </div>
+</table>
+<ul style="margin-top:3rem;">
+    {% if page_obj.has_previous %}
+        <a class="btn btn-outline-success" href="?page={{ page_obj.previous_page_number }}">Regresar</a>
+        {% endif %}
+    {% if page_obj.has_next %}
+        <a class="btn btn-outline-success" href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+        {% endif %}
+</ul>
+{% endblock %}
